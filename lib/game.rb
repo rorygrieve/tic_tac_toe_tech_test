@@ -24,7 +24,11 @@ class Game
 
 
   def place_mark(column, row)
-    board.change_board(column, row)
+    if @turn == @player1
+      board.change_board(column, row, 'X')
+    else
+      board.change_board(column, row, 'O')
+    end
     self.turn == @player1? self.turn = @player2 : self.turn = @player1
   end
 

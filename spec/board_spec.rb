@@ -15,7 +15,7 @@ describe Board do
   context 'using the board' do
 
     it "should be able to change the board" do
-      board.change_board(2,2)
+      board.change_board(2, 2, 'X')
       expect(board.show).to eq([['','',''], ['','X',''], ['','','',]])
     end
 

@@ -60,6 +60,12 @@ describe Game do
       expect(game.board.show).to eq([['','',''], ['','X',''], ['','','',]])
     end
 
+    it "place mark should automatically switch depending on the turn" do
+      game.place_mark(2,2)
+      game.place_mark(2,3)
+      expect(game.board.show).to eq([['','',''],['','X','O'],['','','']])
+    end
+
   end
 
 end
