@@ -29,10 +29,14 @@ class Game
     else
       board.change_board(column, row, 'O')
     end
-    self.turn == @player1? self.turn = @player2 : self.turn = @player1
+    switch_players
   end
 
   private
+
+  def switch_players
+    self.turn == @player1? self.turn = @player2 : self.turn = @player1
+  end
 
   attr_writer :turn
 
