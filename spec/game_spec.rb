@@ -45,14 +45,19 @@ describe Game do
     end
 
     it "place mark should change current turn" do
-      game.place_mark
+      game.place_mark(1,1)
       expect(game.turn).to eq(player2double)
     end
 
     it "place mark should be able to change current turn to player1" do
-      game.place_mark
-      game.place_mark
+      game.place_mark(1,1)
+      game.place_mark(1,2)
       expect(game.turn).to eq(player1double)
+    end
+
+    it "place mark should change the board" do
+      game.place_mark(2,2)
+      expect(game.board.show).to eq([['','',''], ['','X',''], ['','','',]])
     end
 
   end

@@ -8,4 +8,8 @@ class Board
     @show = [['','',''], ['','',''], ['','','',]]
   end
 
+  def change_board(column, row)
+    @show[column-1][row-1] = 'X'
+  end
+
 end
