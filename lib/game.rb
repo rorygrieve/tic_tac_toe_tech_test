@@ -32,7 +32,11 @@ class Game
     else
       board.change_board(row, column, 'O')
     end
-    switch_players
+    if game_over?
+      "Game over: #{@turn.name.capitalize} wins"
+    else
+      switch_players
+    end
   end
 
   private
@@ -49,6 +53,10 @@ class Game
 
   def check_value(row, column)
     raise "Cannot place mark: both numbers needs to be either 1,2 or 3" if column < 1 || column > 3 || row < 1 || row > 3
+  end
+
+  def game_over?
+    @board.show[0] == ['X','X','X']
   end
 
 end

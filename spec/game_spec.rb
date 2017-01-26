@@ -74,6 +74,23 @@ describe Game do
       expect{game.place_mark(4,3)}.to raise_error("Cannot place mark: both numbers needs to be either 1,2 or 3")
     end
 
+  end
+
+  context 'game finished' do
+
+    before do
+      game.add_player1(player1double)
+      game.add_player2(player2double)
+    end
+
+    it "should return game finished when there is a whole row of 'X'" do
+      game.place_mark(1,1)
+      game.place_mark(2,1)
+      game.place_mark(1,2)
+      game.place_mark(2,2)
+      expect(game.place_mark(1,3)).to eq("Game over: Rory wins")
+    end
+
 
   end
 
