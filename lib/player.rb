@@ -1,3 +1,5 @@
+# is responsible for the players
+
 class Player
 
   attr_reader :name

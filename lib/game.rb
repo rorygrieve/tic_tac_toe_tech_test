@@ -1,3 +1,5 @@
+#manages the game including turns
+
 require_relative './board'
 require_relative './player'
 

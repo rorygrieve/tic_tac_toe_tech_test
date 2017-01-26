@@ -1,3 +1,5 @@
+#stores the actions of the players
+
 class Board
 
   attr_reader :show
