@@ -55,6 +55,10 @@ describe Game do
       expect(game.turn).to eq(player1double)
     end
 
+    it "place mark should change the board" do
+      game.place_mark(2,2)
+      expect(game.board.show).to eq([['','',''], ['','X',''], ['','','',]])
+    end
 
   end
 
