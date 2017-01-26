@@ -1,3 +1,6 @@
+require_relative './board'
+require_relative './player'
+
 class Game
 
   attr_reader :player1, :player2, :turn
