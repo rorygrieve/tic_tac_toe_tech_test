@@ -5,11 +5,12 @@ require_relative './player'
 
 class Game
 
-  attr_reader :player1, :player2, :turn
+  attr_reader :player1, :player2, :turn, :board
 
   def initialize
     @player1 = nil
     @player2 = nil
+    @board = Board.new
   end
 
   def add_player1(player1)
