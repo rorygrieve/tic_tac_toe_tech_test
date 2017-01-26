@@ -25,4 +25,22 @@ describe Game do
     expect(game.player2.name).to eq("steve")
   end
 
+  context 'playing a game' do
+
+    before do
+      game.add_player1(player1double)
+      game.add_player2(player2double)
+    end
+
+    it "current turn should return player 1" do
+      expect(game.turn).to eq(player1double)
+    end
+
+    it "place mark should change current turn" do
+      game.place_mark
+      expect(game.turn).to eq(player2double)
+    end
+
+  end
+
 end
