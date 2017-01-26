@@ -17,9 +17,12 @@ class Game
   end
 
 
-
   def place_mark
-    @turn = player2
+    if @turn == @player1
+      @turn = @player2
+    else
+      @turn = @player1
+    end
   end
 
 

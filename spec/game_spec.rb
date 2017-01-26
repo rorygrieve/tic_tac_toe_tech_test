@@ -3,8 +3,8 @@ require 'game'
 describe Game do
 
   let!(:game) { described_class.new }
-  let!(:player1double) { double :player, name: 'rory' }
-  let!(:player2double) { double :player, name: 'steve' }
+  let!(:player1double) { double :player1, name: 'rory' }
+  let!(:player2double) { double :player2, name: 'steve' }
 
 
   it "should initialize with a player 1 that equals nil" do
@@ -39,6 +39,12 @@ describe Game do
     it "place mark should change current turn" do
       game.place_mark
       expect(game.turn).to eq(player2double)
+    end
+
+    it "place mark should be able to change current turn to player1" do
+      game.place_mark
+      game.place_mark
+      expect(game.turn).to eq(player1double)
     end
 
   end
