@@ -13,4 +13,10 @@ class Board
     @show[row-1][column-1] = input
   end
 
+  def better_view
+    puts "#{@show[0]}"
+    puts "#{@show[1]}"
+    puts "#{@show[2]}"
+  end
+
 end
