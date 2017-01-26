@@ -23,13 +23,13 @@ class Game
   end
 
 
-  def place_mark(column, row)
-    check_number(column, row)
-    check_value(column, row)
+  def place_mark(row, column)
+    check_number(row, column)
+    check_value(row, column)
     if @turn == @player1
-      board.change_board(column, row, 'X')
+      board.change_board(row, column, 'X')
     else
-      board.change_board(column, row, 'O')
+      board.change_board(row, column, 'O')
     end
     switch_players
   end
@@ -42,11 +42,11 @@ class Game
     self.turn == @player1? self.turn = @player2 : self.turn = @player1
   end
 
-  def check_number(column, row)
-    raise "Cannot place mark: please enter a valid number" if (!column.is_a? Integer) || (!row.is_a? Integer)
+  def check_number(row, column)
+    raise "Cannot place mark: please enter a valid integer" if (!column.is_a? Integer) || (!row.is_a? Integer)
   end
 
-  def check_value(column, row)
+  def check_value(row, column)
     raise "Cannot place mark: both numbers needs to be either 1,2 or 3" if column < 1 || column > 3 || row < 1 || row > 3
   end
 
