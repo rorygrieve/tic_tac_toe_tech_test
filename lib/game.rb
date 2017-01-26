@@ -24,6 +24,7 @@ class Game
 
 
   def place_mark(column, row)
+    check_number(column, row)
     check_value(column, row)
     if @turn == @player1
       board.change_board(column, row, 'X')
@@ -39,6 +40,10 @@ class Game
 
   def switch_players
     self.turn == @player1? self.turn = @player2 : self.turn = @player1
+  end
+
+  def check_number(column, row)
+    raise "Cannot place mark: please enter a valid number" if (!column.is_a? Integer) || (!row.is_a? Integer)
   end
 
   def check_value(column, row)

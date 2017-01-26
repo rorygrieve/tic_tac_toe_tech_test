@@ -70,6 +70,10 @@ describe Game do
       expect{game.place_mark(4,3)}.to raise_error("Cannot place mark: both numbers needs to be either 1,2 or 3")
     end
 
+    it "should raise an error if someone does not enter a number" do
+      expect{game.place_mark('four',2)}.to raise_error("Cannot place mark: please enter a valid number")
+    end
+
 
   end
 
