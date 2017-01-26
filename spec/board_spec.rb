@@ -19,6 +19,12 @@ describe Board do
       expect(board.show).to eq([['','',''], ['','X',''], ['','','',]])
     end
 
+    it 'should stop someone from placing a mark where there already is one' do
+      board.change_board(2, 2, 'X')
+      expect(board.change_board(2, 2, 'O')).to eq('Cannot place mark there: already a mark there')
+    end
+
+
   end
 
 end

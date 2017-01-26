@@ -9,6 +9,7 @@ class Board
   end
 
   def change_board(column, row, input)
+    return 'Cannot place mark there: already a mark there' if @show[column-1][row-1] != ''
     @show[column-1][row-1] = input
   end
 
