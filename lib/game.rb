@@ -24,6 +24,7 @@ class Game
 
 
   def place_mark(column, row)
+    check_value(column, row)
     if @turn == @player1
       board.change_board(column, row, 'X')
     else
@@ -34,11 +35,14 @@ class Game
 
   private
 
+  attr_writer :turn
+
   def switch_players
     self.turn == @player1? self.turn = @player2 : self.turn = @player1
   end
 
-  attr_writer :turn
-
+  def check_value(column, row)
+    raise "Cannot place mark: both numbers needs to be either 1,2 or 3" if column < 1 || column > 3 || row < 1 || row > 3
+  end
 
 end

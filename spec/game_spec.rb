@@ -66,6 +66,11 @@ describe Game do
       expect(game.board.show).to eq([['','',''],['','X','O'],['','','']])
     end
 
+    it "player should not be able to enter a number higher than 3" do
+      expect{game.place_mark(4,3)}.to raise_error("Cannot place mark: both numbers needs to be either 1,2 or 3")
+    end
+
+
   end
 
 end
