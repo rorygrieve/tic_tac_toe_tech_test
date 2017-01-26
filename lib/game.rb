@@ -11,5 +11,11 @@ class Game
     @player1 = player1
   end
 
+  def add_player2(player2)
+    @player2 = player2
+  end
+
+
+
 
 end
