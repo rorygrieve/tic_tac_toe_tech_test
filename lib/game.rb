@@ -9,7 +9,7 @@ class Game
 
   def add_player1(player1)
     @player1 = player1
-    @turn = player1
+    self.turn = player1
   end
 
   def add_player2(player2)
@@ -18,13 +18,12 @@ class Game
 
 
   def place_mark
-    if @turn == @player1
-      @turn = @player2
-    else
-      @turn = @player1
-    end
+    self.turn == @player1? self.turn = @player2 : self.turn = @player1
   end
 
+  private
+
+  attr_writer :turn
 
 
 end
