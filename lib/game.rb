@@ -7,5 +7,9 @@ class Game
     @player2 = nil
   end
 
+  def add_player1(player1)
+    @player1 = player1
+  end
+
 
 end
