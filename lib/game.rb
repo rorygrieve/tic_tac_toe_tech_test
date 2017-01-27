@@ -56,16 +56,17 @@ class Game
   end
 
   def game_over?
-    player_1_wins? || player_2_wins?
+    if @turn == @player1
+      player_wins?('X')
+    else
+      player_wins?('O')
+    end
   end
 
-  def player_1_wins?
-    ['X','X','X'] == @board.show[0] || ['X','X','X'] ==  @board.show[1] || ['X','X','X'] ==  @board.show[2] || ['X','X','X'] == @board.show.map{|row| row[0]} || ['X','X','X'] == @board.show.map{|row| row[1]} || ['X','X','X'] == @board.show.map{|row| row[2]} || 'XXX' == @board.show[0][0] + @board.show[1][1] + @board.show[2][2]
+  def player_wins?(letter)
+    [letter,letter,letter] == @board.show[0] || [letter,letter,letter] ==  @board.show[1] || [letter,letter,letter] ==  @board.show[2] || [letter,letter,letter] == @board.show.map{|row| row[0]} || [letter,letter,letter] == @board.show.map{|row| row[1]} || [letter,letter,letter] == @board.show.map{|row| row[2]} || letter*3 == @board.show[0][0] + @board.show[1][1] + @board.show[2][2] || letter*3 == @board.show[0][2] + @board.show[1][1] + @board.show[2][0]
   end
 
-  def player_2_wins?
-    ['O','O','O'] == @board.show[0] || ['O','O','O'] == @board.show[1] || ['O','O','O'] == @board.show[2] || ['O','O','O'] == @board.show.map{|row| row[0]} || ['O','O','O'] == @board.show.map{|row| row[1]} || ['O','O','O'] == @board.show.map{|row| row[2]} || 'OOO' == @board.show[0][0] + @board.show[1][1] + @board.show[2][2]
-  end
 
 
 end
