@@ -64,7 +64,7 @@ class Game
   end
 
   def player_2_wins?
-    ['O','O','O'] == @board.show[0] || ['O','O','O'] == @board.show[1] || ['O','O','O'] == @board.show[2] || ['O','O','O'] == @board.show.map{|row| row[0]} || ['O','O','O'] == @board.show.map{|row| row[1]} || ['O','O','O'] == @board.show.map{|row| row[2]}
+    ['O','O','O'] == @board.show[0] || ['O','O','O'] == @board.show[1] || ['O','O','O'] == @board.show[2] || ['O','O','O'] == @board.show.map{|row| row[0]} || ['O','O','O'] == @board.show.map{|row| row[1]} || ['O','O','O'] == @board.show.map{|row| row[2]} || 'OOO' == @board.show[0][0] + @board.show[1][1] + @board.show[2][2]
   end
 
 

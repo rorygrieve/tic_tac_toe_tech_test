@@ -125,6 +125,15 @@ describe Game do
       expect(game.place_mark(3,3)).to eq("Game over: Rory wins")
     end
 
+    it "should return game finished when a diagonal is all 'O'" do
+      game.place_mark(1,2)
+      game.place_mark(1,1)
+      game.place_mark(1,3)
+      game.place_mark(2,2)
+      game.place_mark(3,1)
+      expect(game.place_mark(3,3)).to eq("Game over: Steve wins")
+    end
+
 
 
 
