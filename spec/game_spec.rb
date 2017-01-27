@@ -100,6 +100,14 @@ describe Game do
       expect(game.place_mark(1,3)).to eq("Game over: Steve wins")
     end
 
+    it "should return game finsihed when the first column is all 'X'" do
+      game.place_mark(1,1)
+      game.place_mark(1,2)
+      game.place_mark(2,1)
+      game.place_mark(2,2)
+      expect(game.place_mark(3,1)).to eq("Game over: Rory wins")
+    end
+
 
 
   end

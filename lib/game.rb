@@ -56,7 +56,16 @@ class Game
   end
 
   def game_over?
-    @board.show[0] == ['X','X','X'] || @board.show[0] == ['O','O','O']
+    player_1_wins? || player_2_wins?
   end
+
+  def player_1_wins?
+    ['X','X','X'] == @board.show[0] || ['X','X','X'] ==  @board.show[1] || ['X','X','X'] ==  @board.show[2] || ['X','X','X'] == @board.show.map{|row| row[0]}
+  end
+
+  def player_2_wins?
+    ['O','O','O'] == @board.show[0] || ['O','O','O'] == @board.show[1] || ['O','O','O'] == @board.show[2]
+  end
+
 
 end
