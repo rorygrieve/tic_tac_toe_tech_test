@@ -134,6 +134,18 @@ describe Game do
       expect(game.place_mark(3,3)).to eq("Game over: Steve wins")
     end
 
+    it "should return game finished draw message when board is full without a victor" do
+      game.place_mark(1,1)
+      game.place_mark(1,2)
+      game.place_mark(1,3)
+      game.place_mark(2,2)
+      game.place_mark(2,1)
+      game.place_mark(3,1)
+      game.place_mark(3,2)
+      game.place_mark(2,3)
+      expect(game.place_mark(3,3)).to eq("Game over: it's a draw")
+    end
+
 
 
 

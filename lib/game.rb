@@ -12,6 +12,7 @@ class Game
     @player1 = nil
     @player2 = nil
     @board = Board.new
+    @count = 0
   end
 
   def add_player1(player1)
@@ -27,12 +28,15 @@ class Game
   def place_mark(row, column)
     check_number(row, column)
     check_value(row, column)
+    @count +=1
     if @turn == @player1
       board.change_board(row, column, 'X')
     else
       board.change_board(row, column, 'O')
     end
-    if game_over?
+    if @count == 9
+      "Game over: it's a draw"
+    elsif game_over?
       "Game over: #{@turn.name.capitalize} wins"
     else
       switch_players
@@ -41,7 +45,7 @@ class Game
 
   private
 
-  attr_writer :turn
+  attr_writer :turn, :count
 
   def switch_players
     self.turn == @player1? self.turn = @player2 : self.turn = @player1
