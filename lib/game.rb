@@ -56,7 +56,7 @@ class Game
   end
 
   def game_over?
-    @board.show[0] == ['X','X','X']
+    @board.show[0] == ['X','X','X'] || @board.show[0] == ['O','O','O']
   end
 
 end

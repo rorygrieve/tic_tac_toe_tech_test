@@ -83,13 +83,23 @@ describe Game do
       game.add_player2(player2double)
     end
 
-    it "should return game finished when there is a whole row of 'X'" do
+    it "should return game finished when the first row is all 'X'" do
       game.place_mark(1,1)
       game.place_mark(2,1)
       game.place_mark(1,2)
       game.place_mark(2,2)
       expect(game.place_mark(1,3)).to eq("Game over: Rory wins")
     end
+
+    it "should return game finished when the first row is all 'O'" do
+      game.place_mark(2,1)
+      game.place_mark(1,1)
+      game.place_mark(2,2)
+      game.place_mark(1,2)
+      game.place_mark(3,1)
+      expect(game.place_mark(1,3)).to eq("Game over: Steve wins")
+    end
+
 
 
   end
